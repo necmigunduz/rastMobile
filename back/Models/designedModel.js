@@ -1,7 +1,7 @@
-// ToDo Model
+// Designed Model
 var mongoose = require('mongoose')
 // Setup Schema
-var toDoSchema = mongoose.Schema({
+var designedSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -10,7 +10,7 @@ var toDoSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    toDoType: {
+    designedType: {
         type: String,
         required: true
     },
@@ -21,8 +21,8 @@ var toDoSchema = mongoose.Schema({
 })
 
 // Export Model
-var ToDo = module.exports = mongoose.model('toDo', toDoSchema)
+var Designed = module.exports = mongoose.model('designed', designedSchema)
 
 module.exports.get = function(callback, limit) {
-    ToDo.find(callback).limit(limit)
+    Designed.find(callback).limit(limit)
 }

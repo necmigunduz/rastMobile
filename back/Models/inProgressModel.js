@@ -1,7 +1,7 @@
-// ToDo Model
+// InProgress Model
 var mongoose = require('mongoose')
 // Setup Schema
-var toDoSchema = mongoose.Schema({
+var inProgressSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -10,7 +10,7 @@ var toDoSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    toDoType: {
+    inProgressType: {
         type: String,
         required: true
     },
@@ -21,8 +21,8 @@ var toDoSchema = mongoose.Schema({
 })
 
 // Export Model
-var ToDo = module.exports = mongoose.model('toDo', toDoSchema)
+var BackLog = module.exports = mongoose.model('backLog', backLogSchema)
 
 module.exports.get = function(callback, limit) {
-    ToDo.find(callback).limit(limit)
+    BackLog.find(callback).limit(limit)
 }

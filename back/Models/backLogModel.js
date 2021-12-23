@@ -13,6 +13,10 @@ var backLogSchema = mongoose.Schema({
     logType: {
         type: String,
         required: true
+    },
+    color: {
+        type: String,
+        required: true
     }
 })
 
