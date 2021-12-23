@@ -1,7 +1,7 @@
 // ToDo Model
-var mongoose = require('mongoose')
+import { Schema, model } from 'mongoose'
 // Setup Schema
-var toDoSchema = mongoose.Schema({
+var toDoSchema = Schema({
     name: {
         type: String,
         required: true
@@ -21,8 +21,8 @@ var toDoSchema = mongoose.Schema({
 })
 
 // Export Model
-var ToDo = module.exports = mongoose.model('toDo', toDoSchema)
+var ToDo = module.exports = model('toDo', toDoSchema)
 
-module.exports.get = function(callback, limit) {
-    ToDo.find(callback).limit(limit)
+export function get(callback, limit) {
+    find(callback).limit(limit)
 }

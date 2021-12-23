@@ -1,7 +1,7 @@
 // BackLog Model
-var mongoose = require('mongoose')
+import { Schema, model } from 'mongoose'
 // Setup Schema
-var backLogSchema = mongoose.Schema({
+var backLogSchema = Schema({
     name: {
         type: String,
         required: true
@@ -21,8 +21,8 @@ var backLogSchema = mongoose.Schema({
 })
 
 // Export Model
-var BackLog = module.exports = mongoose.model('backLog', backLogSchema)
+var BackLog = module.exports = model('backLog', backLogSchema)
 
-module.exports.get = function(callback, limit) {
-    BackLog.find(callback).limit(limit)
+export function get(callback, limit) {
+    find(callback).limit(limit)
 }
