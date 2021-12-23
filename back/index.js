@@ -18,8 +18,8 @@ app.use(bodyParser.json());
 mongoose.connect("mongodb://localhost/resthub", { useNewUrlParser: true });
 var db = mongoose.connection;
 
-if (!db) console.log("Error connecting db");
-else console.log("Db connected successfully");
+if (!db) console.log("Error connecting the database");
+else console.log("The database connected successfully");
 
 var port = process.env.PORT || 8081;
 
