@@ -1,7 +1,8 @@
 // Designed Model
 let mongoose = require('mongoose')
+const Schema = mongoose.Schema
 // Setup Schema
-let designedSchema = mongoose.Schema({
+let designedSchema = Schema({
     name: {
         type: String,
         required: true
@@ -23,6 +24,6 @@ let designedSchema = mongoose.Schema({
 // Export Model
 var Designed = module.exports = mongoose.model('designed', designedSchema)
 
-export function get(callback, limit) {
-    find(callback).limit(limit)
+module.exports.get = function (callback, limit) {
+    Designed.find(callback).limit(limit);
 }

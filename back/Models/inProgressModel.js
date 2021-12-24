@@ -1,7 +1,8 @@
 // InProgress Model
 let mongoose = require('mongoose')
+const Schema = mongoose.Schema
 // Setup Schema
-let inProgressSchema = mongoose.Schema({
+let inProgressSchema = Schema({
     name: {
         type: String,
         required: true
@@ -21,8 +22,8 @@ let inProgressSchema = mongoose.Schema({
 })
 
 // Export Model
-var BackLog = module.exports = mongoose.model('backLog', backLogSchema)
+var InProgress = module.exports = mongoose.model('inProgress', inProgressSchema)
 
-export function get(callback, limit) {
-    find(callback).limit(limit)
+module.exports.get = function (callback, limit) {
+    InProgress.find(callback).limit(limit);
 }
