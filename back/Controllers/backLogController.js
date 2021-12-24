@@ -52,3 +52,25 @@ exports.view = function(res, req) {
     })
 }
 
+exports.update = function(req, res) {
+    BackLog.findBy(req.params.backLog_id, function(err, backLog){
+        if(err)
+            res.send(err)
+
+        backLog.name = req.body.name ? req.body.name : backLog.name
+        backLog.description = req.body.description
+        backLog.logType = req.body.logType
+        backLog.color = req.body.color
+        // Save updated backlog
+        backLog.save(function(err){
+            if(err)
+                res.json(err)
+
+            res.json({
+                message: "Backlog info is updated successfullly!",
+                data: backLog
+            })
+        })
+    })
+}
+
