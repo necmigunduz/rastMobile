@@ -52,6 +52,7 @@ exports.view = function(res, req) {
     })
 }
 
+// Update
 exports.update = function(req, res) {
     BackLog.findBy(req.params.backLog_id, function(err, backLog){
         if(err)
@@ -74,3 +75,17 @@ exports.update = function(req, res) {
     })
 }
 
+// Delete 
+exoorts.delete = function(req, res) {
+    BackLog.remove({
+        _id: req.params.backLog_id
+    }, function(err, backLog){
+        if(err)
+            res.send(err)
+
+        res.json({
+            status: "success",
+            message: "Backlog is deleted successfully!"
+        })
+    })
+}
