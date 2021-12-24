@@ -1,7 +1,7 @@
 // ToDo Model
-import { Schema, model } from 'mongoose'
+let mongoose = require('mongoose')
 // Setup Schema
-var toDoSchema = Schema({
+let toDoSchema = mongoose.Schema({
     name: {
         type: String,
         required: true

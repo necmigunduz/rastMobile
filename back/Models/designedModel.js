@@ -1,7 +1,7 @@
 // Designed Model
-import { Schema, model } from 'mongoose'
+let mongoose = require('mongoose')
 // Setup Schema
-var designedSchema = Schema({
+let designedSchema = mongoose.Schema({
     name: {
         type: String,
         required: true

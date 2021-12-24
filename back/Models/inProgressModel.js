@@ -1,7 +1,7 @@
 // InProgress Model
-import { Schema, model } from 'mongoose'
+let mongoose = require('mongoose')
 // Setup Schema
-var inProgressSchema = Schema({
+let inProgressSchema = mongoose.Schema({
     name: {
         type: String,
         required: true

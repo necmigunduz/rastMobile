@@ -1,8 +1,8 @@
 // BackLog Controller
-Contact = require('../Models/backLogModel')
+BackLog = require('../Models/backLogModel')
 
 // Index
-exports.index = function(req, res) {
+export function index(req, res) {
     BackLog.get(function(err, backLogs){
         if(err) {
             res.json({
@@ -20,7 +20,7 @@ exports.index = function(req, res) {
 
 // Create
 
-exports.create = function(req, res) {
+export function create(req, res) {
     let backLog = new BackLog()
     backLog.name = req.body.name ? req.body.name : backLog.name
     backLog.description = req.body.description

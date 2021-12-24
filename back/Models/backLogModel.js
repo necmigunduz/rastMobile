@@ -1,7 +1,7 @@
 // BackLog Model
-import { Schema, model } from 'mongoose'
+let mongoose = require('mongoose')
 // Setup Schema
-var backLogSchema = Schema({
+let backLogSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
