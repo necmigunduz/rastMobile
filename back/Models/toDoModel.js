@@ -21,7 +21,7 @@ var toDoSchema = Schema({
 })
 
 // Export Model
-var ToDo = module.exports = model('toDo', toDoSchema)
+var ToDo = module.exports = mongoose.model('toDo', toDoSchema)
 
 export function get(callback, limit) {
     find(callback).limit(limit)

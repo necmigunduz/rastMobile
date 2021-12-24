@@ -21,7 +21,7 @@ var designedSchema = Schema({
 })
 
 // Export Model
-var Designed = module.exports = model('designed', designedSchema)
+var Designed = module.exports = mongoose.model('designed', designedSchema)
 
 export function get(callback, limit) {
     find(callback).limit(limit)

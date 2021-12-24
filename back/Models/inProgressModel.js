@@ -21,7 +21,7 @@ var inProgressSchema = Schema({
 })
 
 // Export Model
-var BackLog = module.exports = model('backLog', backLogSchema)
+var BackLog = module.exports = mongoose.model('backLog', backLogSchema)
 
 export function get(callback, limit) {
     find(callback).limit(limit)
