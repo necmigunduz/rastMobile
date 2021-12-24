@@ -23,6 +23,6 @@ let backLogSchema = mongoose.Schema({
 // Export Model
 var BackLog = module.exports = mongoose.model('backLog', backLogSchema)
 
-export function get(callback, limit) {
-    find(callback).limit(limit)
+module.exports.get = function (callback, limit) {
+    BackLog.find(callback).limit(limit);
 }
