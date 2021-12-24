@@ -38,3 +38,17 @@ exports.new = function(req, res) {
         })
     })
 }
+
+// View
+exports.view = function(res, req) {
+    BackLog.findBy(req.params.backLog_id, function(err, backLog){
+        if(err)
+            res.send(err)
+
+        res.json({
+            message: "Backlog details uploading!",
+            data: backLog
+        })
+    })
+}
+
